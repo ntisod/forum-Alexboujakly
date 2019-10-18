@@ -38,6 +38,13 @@
             } else {
                 $email = test_input($_POST["email"]);
             }
+
+            if (empty($_POST["password"])) {
+                $psswdErr = "lösenord är obligatoriskt";
+            } else {
+                $psswd = test_input($_POST["password"]);
+            }
+
             if (empty($_POST["website"])) {
                 $website = "";
             } else {
@@ -57,6 +64,7 @@
             echo $firstname . "<br>";
             echo $lastname . "<br>";
             echo $email . "<br>";
+            echo $psswd . "<br>";
             echo $website . "<br>";
             echo $comment . "<br>";
             echo $gender . "<br>";
@@ -84,6 +92,9 @@
             <?php echo $emailErr;?></span><br><br>
             <label for="website">Websajt:</label><br>
             <input type="url" name="website" value="<?php echo $website;?>"><br>
+            <label for="psswd">Lösenord:</label><br>
+            <input type="password" name="psswd" value="<?php echo $psswd;?>"><br>
+            
             <label for="comment">Kommentar:</label><br>
             <textarea name="comment" rows="5" cols="40"><?php echo $comment;?></textarea><br>
             <label for="gender">Kön:</label>
